@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+
+    <!-- Override for Website Sale Addrees View -->
+        <template id="extra_info_custom" name="Checkout Extra Info with Delivery Date" inherit_id="website_sale.extra_info">
+          <xpath expr="//div[contains(@class,'s_website_form_rows')]" position="replace">
+
+          <div class="form-group s_website_form_field col-12 s_website_form_custom s_website_form_required" data-type="date" data-name="Field">
+            <div class="row s_col_no_resize s_col_no_bgcolor">
+              <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" for="x_website_delivery_date">
+                <span class="s_website_form_label_content">Delivery Date</span>
+              </label>
+              <div class="col-sm">
+                <div class="s_website_form_date input-group date" id="datepicker_x_website_delivery_date" data-target-input="nearest">
+                  <input type="text" class="form-control datetimepicker-input s_website_form_input" data-target="#datepicker_x_website_delivery_date" name="x_website_delivery_date" placeholder="" id="x_website_delivery_date" required="1" t-att-value="'x_website_delivery_date' in order and order.x_website_delivery_date and order.x_website_delivery_date.strftime('%d/%m/%Y')" />
+                  <div class="input-group-append" data-target="#datepicker_x_website_delivery_date" data-toggle="datetimepicker" options="{'datepicker':{'minDate': 0}}">
+                    <div class="input-group-text">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-12 s_website_form_submit s_website_form_no_submit_options">
+            <div style="width: 200px;" class="s_website_form_label"></div>
+            <a role="button" href="/shop/checkout" class="btn btn-secondary float-left"><span class="fa fa-chevron-left"></span> Previous</a>
+            <a role="button" class="btn btn-primary float-right s_website_form_send" href="/shop/confirm_order" data-original-title="" title="" aria-describedby="tooltip250471">Next <span class="fa fa-chevron-right"></span></a>
+            <span id="s_website_form_result"></span>
+          </div>
+
+          </xpath>
+        </template>
+
+
+        <!-- Allow x_website_delivery_date to be whitelisted in web forms -->
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>sale.order</value>
+            <value eval="[
+                'x_website_delivery_date'
+            ]"/>
+        </function>
+
+  </data>
+</odoo>
