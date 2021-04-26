@@ -1,26 +1,27 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "website_sale_extra_info",
+    'name': "Website Default Country",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Select the default country for an eCommerce Website""",
 
     'description': """
-        Long description of module's purpose
+        Website Module to allow you to set the default country for a sale on the website.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Lily White Web",
+    'website': "http://www.lilywhiteweb.com",
+    'images':['static/description/main_screenshot.png'],
+    'license': 'AGPL-3',
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': 'Website',
+    'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'website_sale'],
+    'depends': ['base','website'],
 
     # always loaded
     'data': [
