@@ -11,7 +11,7 @@
 
     'author': "Lily White Web",
     'website': "http://www.lilywhiteweb.com",
-    'images':['static/description/main_screenshot.png'],
+    'images':['static/description/default_country_screenshot.png'],
     'license': 'AGPL-3',
 
     # Categories can be used to filter modules in modules listing
