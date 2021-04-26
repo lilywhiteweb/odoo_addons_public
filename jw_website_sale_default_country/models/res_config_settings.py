@@ -12,7 +12,7 @@ class ResConfigSettingsDefaultCountry(models.TransientModel):
     def get_values(self):
         res = super(ResConfigSettingsDefaultCountry, self).get_values()
         res.update(
-            website_default_country_id = int(self.env['ir.config_parameter'].sudo().get_param('website_sale_default_country.website_default_country_id')),
+            website_default_country_id = int(self.env['ir.config_parameter'].sudo().get_param('jw_website_sale_default_country.website_default_country_id')),
         )
         return res
 
@@ -22,4 +22,4 @@ class ResConfigSettingsDefaultCountry(models.TransientModel):
 
         website_default_country_id = int(self.website_default_country_id and self.website_default_country_id.id) or False
 
-        param.set_param('website_sale_default_country.website_default_country_id', website_default_country_id)
+        param.set_param('jw_website_sale_default_country.website_default_country_id', website_default_country_id)

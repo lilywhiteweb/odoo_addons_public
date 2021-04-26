@@ -11,7 +11,7 @@ class CustomWebsiteSale(WebsiteSale):
     def address(self, **kw):
         res = super(CustomWebsiteSale, self).address(**kw)
 
-        default_country_id = int(request.env['ir.config_parameter'].sudo().get_param('website_sale_default_country.website_default_country_id'))
+        default_country_id = int(request.env['ir.config_parameter'].sudo().get_param('jw_website_sale_default_country.website_default_country_id'))
         default_country = request.env['res.country'].sudo().browse(default_country_id)
 
         res.qcontext['country'] = (
