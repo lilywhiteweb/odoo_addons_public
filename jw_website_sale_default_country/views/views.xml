@@ -8,7 +8,7 @@
 
                 <xpath expr="//div//div[@id='website_settings']" position="inside">
 
-                    <div class="col-12 col-lg-6 o_setting_box" id="default_country" groups="website.group_multi_website">
+                    <div class="col-12 col-lg-6 o_setting_box" id="default_country">
                       <div class="o_setting_right_pane">
                           <label string="Default Country" for="website_default_country_id"/>
                           <span class="fa fa-lg fa-globe" title="Values set here are website-specific." groups="website.group_multi_website"/>
